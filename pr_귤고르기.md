@@ -42,7 +42,7 @@ return answer;
 }
 ```
 
-위 방식은 비효율적인 접근이 많이 포함되있으므로 몇몇 테스트 케이스에서 시간초과가  나는 것을 볼 수 있었음.
+위 방식은 비효율적인 접근이 많이 포함되있으므로 몇몇 테스트 케이스에서 시간초과가 나는 것을 볼 수 있었음.
 
 map을 value 기준으로 내림차순으로 정렬할 수 있으면 훨씬 최적화가 될 거라고 생각.
 
@@ -62,7 +62,7 @@ static bool comp(pair<int, int>& a, pair<int, int>& b){
 
 int solution(int k, vector<int> tangerine) {
     int answer = 0;
-    map<int, int > m; 
+    map<int, int > m;
     sort(tangerine.begin(),tangerine.end());
     for(auto it = tangerine.begin(); it!=tangerine.end(); it++){
         m[*it] += 1;
@@ -85,7 +85,7 @@ int solution(int k, vector<int> tangerine) {
                     flag = !flag;
                     break;
                 }
-            }   
+            }
         }
         //maxValue 인덱스 삭제
         for (auto it = v.begin(); it != v.end();it++) {
@@ -98,4 +98,7 @@ int solution(int k, vector<int> tangerine) {
     }
     return answer;
 }
+
+- 다른 사람 풀이를 보다가 알게 된 것
+    vector 라이브러리에서 max_element를 사용하면 for문 필요없이 한줄로 vector내의 최댓값 인덱스를 얻을 수 있다.
 ```
